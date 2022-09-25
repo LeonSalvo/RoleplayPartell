@@ -1,8 +1,8 @@
 namespace RoleplayGame
 {
-    public class Archer
+    public class Archer : IPersonaje
     {
-        private int health = 100;
+        public int health = 100;
 
         public Archer(string name)
         {
@@ -43,9 +43,9 @@ namespace RoleplayGame
             }
         }
 
-        public void ReceiveAttack(int power)
+        public void Attack(IPersonaje atacado)
         {
-            if (this.DefenseValue < power)
+            if (atacado.DefenseValue < power)
             {
                 this.Health -= power - this.DefenseValue;
             }
