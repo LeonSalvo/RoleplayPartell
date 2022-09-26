@@ -2,11 +2,11 @@ using System;
 
 namespace RoleplayGame
 {
-    public interface IPersonaje
+    public interface IPersonaje : IAttack, IDefense
     {
         public int Health{get;}
-        public string AttackValue{get;set;}
-        public string DefenseValue{get;set;}
+        public void Cure();
+        public void ReceiveAttack(IPersonaje atacante);
 
     }
 }
